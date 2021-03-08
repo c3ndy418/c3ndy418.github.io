@@ -9,7 +9,7 @@
     
     <title>
         
-            simple 日记 |
+            2020-03-16 周报 |
         
         I0gan&#39; life
     </title>
@@ -121,7 +121,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">simple 日记</span>
+            <span class="title-hover-animation">2020-03-16 周报</span>
         </div>
 
         
@@ -139,8 +139,19 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-03-04 16:54:04
+        <i class="fas fa-edit"></i>&nbsp;2020-03-16 18:24:50
     </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/summary/">summary</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
     
         <span class="article-tags article-meta-item">
@@ -148,7 +159,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/LOG/">LOG</a>&nbsp;
+                        <a href="/tags/weekly-summary/">weekly summary</a>&nbsp;
                     </li>
                 
             </ul>
@@ -167,9 +178,39 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="2021-03-03"><a href="#2021-03-03" class="headerlink" title="2021/03/03"></a>2021/03/03</h1><p>难受的一天，惹向*朋友生气了，一天难受，但促使自己去反思，晚上面试学弟罗**，也接到了毕业设计项目，但不知道能不能做，更新了一下arch系统。</p>
-<h1 id="2021-03-04"><a href="#2021-03-04" class="headerlink" title="2021/03/04"></a>2021/03/04</h1><p>今天虽然上课效率不咋滴，但也要坚持，与朋友两个人吃了50元的中午饭(干饭王)，学习护网知识</p>
-<h1 id="2021-03-05"><a href="#2021-03-05" class="headerlink" title="2021/03/05"></a>2021/03/05</h1><p>好好学习的一整天，加油！今天身份证掉了，谢谢有人帮我捡到啦，晚上面试学弟。</p>
+            <h3 id="最近在干什么"><a href="#最近在干什么" class="headerlink" title="最近在干什么?"></a>最近在干什么?</h3><h4 id="前一个星期-接到了一个外包-第一个-项目要求是这样的"><a href="#前一个星期-接到了一个外包-第一个-项目要求是这样的" class="headerlink" title="前一个星期, 接到了一个外包(第一个),项目要求是这样的."></a>前一个星期, 接到了一个外包(第一个),项目要求是这样的.</h4><h5 id="项目要求"><a href="#项目要求" class="headerlink" title="项目要求:"></a>项目要求:</h5><p>开发即时通讯软件, 客户端采用Qt, 服务端不限</p>
+<ol>
+<li>客户端和服务端都在Linux系统下运行</li>
+<li>拥有比较日常化的UI (不要过于丰富,也不要太简单)</li>
+<li>使用数据库储存用户信息</li>
+<li>在网络传输这块采用加密,保证安全传输</li>
+<li>实现注册账号,登录账号, 修改用户信息, 用户信息包含昵称,账号,头像等, 添加好友, 删除好友,同步好友信息</li>
+<li>好友之间能发送消息, 且能发送文件</li>
+<li>实现群消息机制</li>
+<li>群里拥有有群人员列表</li>
+<li>保证服务端与客户端能够长期稳定运行,</li>
+<li>完成日期在2020-03-15之前(2020-03-08开始)</li>
+</ol>
+<h3 id="简单的一些介绍"><a href="#简单的一些介绍" class="headerlink" title="简单的一些介绍:"></a>简单的一些介绍:</h3><p>客户端与服务端采用二进制加密传输,在用户登录之后, 与QQ类似, 会拥有TCP长连接用于用于与数据库的交互操作, 采用udp进行发送消息,<br>服务端,使用多进程后台运行, 能采用命令的方式停止服务, 多线程方式进行tcp并发处理.子线程,udp消息转发, 群发,处理发送文件请求,使用链表储存在线用户, 并记录用户的网络地址信息…..<br>顺便透露一下外快吧^_^(1k+);</p>
+<h3 id="来一个简单的运行机制吧"><a href="#来一个简单的运行机制吧" class="headerlink" title="来一个简单的运行机制吧:"></a>来一个简单的运行机制吧:</h3><p>实际比较复杂, 这是随便大概画画的.</p>
+<p><img src="/images/weekly-report-0-1.png" alt="img"></p>
+<p><img src="/images/weekly-report-0-2.png" alt="img"></p>
+<p>这涉及到版权, 所以测试的原图就不发布了<br>我没啥说的,就列举一下我的开发日志</p>
+<p>2020-03-09:<br>(基于我的第二个未完成的闭源即时通讯软件Liq项目进行了二次开发,所以 客户端的UI基本完毕, 只是客户端与服务端的核心交互没有做, 所以要的重新设计服务端与客户端的网络交互框架)</p>
+<p>实现刷新好友列表，搜索好友,添加好友.<br>bug:<br>(添加好友时内存泄露服务端崩溃)<br>(没有实现同步刷新好友列表)<br>修复:<br>无</p>
+<p>2020-03-10:<br>实现基本好友聊天..<br>实现发送与接收文件 (完成一半)<br>bug:<br>(添加好友时内存泄露服务端崩溃)<br>(没有实现同步刷新好友列表)<br>(采用tcp协议进行文件传输, tcp丢包问题太大, 是因为tcp的缓冲区过大, 导致发送粘包现象, 无法解析包的数据结构)<br>(客户端退出时, 内存发送泄露, 有free掉野指针,导致不能正常退出)<br>修复:<br>客户端退出时, 内存发送泄露, 有free掉野指针,导致不能正常退出.(修复方案:通过注释排除, 和反复调试,找到了一个函数存在问题)</p>
+<p>2020-03-11:<br>预计完成目标:<br>实现基本群聊天.<br>bug:<br>(采用tcp协议进行文件传输, 虽然提供了即时响应包, 解决了粘包问题, 但是不能发送大文件)<br>(服务端内存泄露, double free, 加密数组越界)<br>(添加好友时内存泄露服务端崩溃)<br>(添加好友时没有实现同步刷新好友列表)<br>修复:<br>服务端 double free, 加密数组越界<br>tcp程序处理不过来的丢包现象</p>
+<p>2020-03-12:<br>更改传输文件协议从tcp改为udp (传输文件不需要经过服务中转)<br>(添加好友时内存泄露服务端崩溃)</p>
+<p>bug:<br>(采用思路跟tcp一样, 发送一个包就响应一个包, 避免丢包现象, 但是还是不能发送文件)</p>
+<p>2020-03-13:加固了服务端的稳定性能<br>对添加好友进行优化<br>bug:<br>(添加好友有时候内存泄露服务端崩溃)<br>多线程同时使用一个数据库的指针时, 由于同时访问该数据库, 导致数据库处理不过来,<br>数据库断开连接.</p>
+<p>修复:<br>优化了数据库的封装, 采用等待机制,多个线程同时访问时, 需要等待上一个处理完毕,在再进行处理</p>
+<p>2020-03-14:实现用户信息修改功能,文件传输,群人员列表<br>刷新好友列表采用每10s刷新一次<br>bug:<br>(添加好友有时候内存泄露服务端崩溃)</p>
+<p>修复:<br>优化整个框架-修复了udp传输文件,原因是路径不对没有创建</p>
+<p>2020-03-15:实现好友删除功能, 优化性能及调试测试</p>
+<p>(添加好友有时候内存泄露服务端崩溃)</p>
+<p>修复:<br>更改服务端的刷新机制,修复了添加好友时内存泄露服务端崩溃</p>
+<p>…………….</p>
+<h3 id="这周打算干什么"><a href="#这周打算干什么" class="headerlink" title="这周打算干什么?"></a>这周打算干什么?</h3><p>把学习这块补上来一下, 总结一下上次攻防世界的比赛不能做的Pwn题目, 加油….</p>
 
         </div>
 
@@ -181,33 +222,18 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/03/04/life/mood-study/"
+                           href="/2020/03/28/life/weekly-report-1/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">人性成长笔记</span>
+                                <span class="post-nav-title-item">2020-03-28 周报</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
                     </div>
                 
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2021/02/03/life/love-history/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">LOVE经历</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
                 
             </div>
         
